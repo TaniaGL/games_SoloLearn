@@ -1,0 +1,16 @@
+# Link Finder
+
+yt_link = input()
+
+def link_finder (link):
+    '''Extracts the video ID from the link'''
+    if "=" in link:
+        link_split = link.split("=")
+        video_id = link_split[1]
+        return video_id
+    elif "youtu.be" in link:
+        link_split = link.split("/")
+        video_id = link_split[3]
+        return video_id
+
+print(link_finder(yt_link))
